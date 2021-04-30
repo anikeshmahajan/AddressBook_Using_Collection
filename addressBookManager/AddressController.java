@@ -9,7 +9,7 @@ public class AddressController {
 	Scanner scanner = new Scanner(System.in);
 	public static void main(String[] args) {
 		new AddressController().userInput();
-		
+
 	}
 
 	public void userInput() {
@@ -22,25 +22,25 @@ public class AddressController {
 			scanner.nextLine();
 			System.out.println("\t\t\t Enter the DETAILS");
 			System.out.println("Enter the FirstName");
-			String first_Name = scanner.nextLine();
+			String first_Name = scanner.next();
 
 			System.out.println("Enter the LastName");
-			String last_Name = scanner.nextLine();
+			String last_Name = scanner.next();
 
 			System.out.println("Enter the Address");
-			String address = scanner.nextLine();
+			String address = scanner.next();
 
 			System.out.println("Enter the City");
-			String city = scanner.nextLine();
+			String city = scanner.next();
 
 			System.out.println("Enter the PinCode");
-			String pincode = scanner.nextLine();
+			String pincode = scanner.next();
 
 			System.out.println("Enter the PhoneNo");
-			String phoneNo = scanner.nextLine();
+			String phoneNo = scanner.next();
 
 			System.out.println("Enter the Email");
-			String email = scanner.nextLine();
+			String email = scanner.next();
 
 			contact = new Contact(first_Name,last_Name,address,city,pincode,phoneNo,email);
 			addressBookService.addContact(contact);
@@ -49,44 +49,20 @@ public class AddressController {
 
 
 		case 2:
-			
 			System.out.println("Enter the name ");
-			String contactName = scanner.nextLine();
-			
-			scanner.nextLine();
-			 System.out.println("Enter the FirstName");
-			 String first_Name1 = scanner.nextLine();
-			
-			 System.out.println("Enter the LastName");
-			 String last_Name1 = scanner.nextLine();
-			
-			 System.out.println("Enter the Address");
-			 String address1 = scanner.nextLine();
-			
-			 System.out.println("Enter the City");
-			 String city1 = scanner.nextLine();
-			
-			 System.out.println("Enter the PinCode");
-			 String pincode1 = scanner.nextLine();
-			
-			 System.out.println("Enter the PhoneNo");
-			 String phoneNo1 = scanner.nextLine();
-			 
-			 System.out.println("Enter the Email");
-			 String email1 = scanner.nextLine();
-			 
-			addressBookService.editContact(contactName,contact,first_Name1,last_Name1,address1,city1,pincode1,phoneNo1,email1);
-				userInput();
+			String contactName = scanner.next();
+
+			addressBookService.editContact(contactName,scanner);
+			userInput();
 			break;
 		case 3:
 
 			System.out.println("Enter the name ");
-			String contactName1 = scanner.nextLine();
-			
-			
+			String contactName1 = scanner.next();
+
 			addressBookService.deleteContact(contactName1);
 
-
+			userInput();
 			break;
 
 		case 4:
